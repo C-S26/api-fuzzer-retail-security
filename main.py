@@ -13,10 +13,10 @@ def run_fuzzer():
         response = send_request(API_URL, payload)
         result = analyze(response)
         #print the result
-        if "Flaw" in result or "Crash" in result:
-           print(f"{result}\n")
+        if "Flaw" in result or "Detected" in result or "IDOR" in result:
+          print(f"{result}\n")
         else:
-           print(f"Result: {result}\n")
+          print(f"Result: {result}\n")
 
 if __name__ == "__main__":
     run_fuzzer()
